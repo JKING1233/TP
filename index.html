@@ -8,245 +8,115 @@
   <meta name="author" content="Tanjong Pagar Fitness">
   <title>Personal Training & Trainers</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    nav .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      padding: 0;
-      margin-top: 10px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-    }
-
-    .nav-menu a:hover {
-      color: #0056b3;
-    }
-
-    .intro-image img {
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-
-    .trainer-grid, .pricing-cards, .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .trainer-card, .pricing-card, .card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 200px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      color: inherit;
-    }
-
-    .trainer-card img, .pricing-card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .trainer-card h3, .pricing-card h3 {
-      margin: 10px 0 5px;
-    }
-
-    .trainer-card p, .pricing-card p {
-      margin: 0 0 10px;
-      color: #555;
-    }
-
-    .pricing {
-      background: #d50000;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .pricing h2 {
-      font-size: 2em;
-      margin-bottom: 30px;
-    }
-
-    .card {
-      padding: 30px 20px;
-    }
-
-    .card h3 {
-      color: #d50000;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 2em;
-      font-weight: bold;
-      margin: 10px 0;
-      color: #d50000;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0 0;
-    }
-
-    .card ul li {
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    .pricing-grid .pricing-card h3 {
-      color: #ff0000;
-    }
-
-    .pricing-grid .pricing-card p {
-      color: #333;
-    }
-
-    @media (max-width: 600px) {
-      .trainer-grid,
-      .pricing-cards,
-      .pricing-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .trainer-card,
-      .card,
-      .pricing-card {
-        width: 90%;
-      }
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Transform Your Body with Tanjong Pagar</h1>
+<body class="bg-gray-50 text-gray-900 font-[Poppins]">
+  <header class="bg-black text-white text-center py-6">
+    <h1 class="text-2xl md:text-4xl font-bold">Transform Your Body with Tanjong Pagar</h1>
     <nav>
-      <ul class="nav-menu">
-        <li><a href="#trainers">Trainers</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+      <ul class="flex justify-center gap-6 mt-4 text-red-500 font-bold">
+        <li><a href="#trainers" class="hover:underline">Trainers</a></li>
+        <li><a href="#pricing" class="hover:underline">Pricing</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="intro-image">
-    <img src="pngfind.com-exclusive-offer-png-6120904.png" alt="Personal Training Session" />
+  <section class="px-4 py-6">
+    <img src="pngfind.com-exclusive-offer-png-6120904.png" alt="Personal Training Session" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" />
   </section>
 
-  <main>
-    <section id="trainers">
-      <div class="trainer-section">
-        <h2>Fitness Manager & Specialist Coaches</h2>
-        <div class="trainer-grid">
-          <a href="Syam.html" class="trainer-card"><img src="Syam.jpg" alt="Syam"><h3>Syam</h3><p>Fitness Manager & Specialist Coach</p></a>
-          <a href="Rudy.html" class="trainer-card"><img src="Rudy.jpg" alt="Rudy"><h3>Rudy</h3><p>Specialist Coach</p></a>
+  <main class="px-4">
+    <section id="trainers" class="space-y-12">
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Fitness Manager & Specialist Coaches</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-center">
+          <a href="Syam.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden"><img src="Syam.jpg" alt="Syam" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Syam</h3><p class="text-sm text-gray-600">Fitness Manager & Specialist Coach</p></div></a>
+          <a href="Rudy.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden"><img src="Rudy.jpg" alt="Rudy" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Rudy</h3><p class="text-sm text-gray-600">Specialist Coach</p></div></a>
         </div>
       </div>
-      <div class="trainer-section">
-        <h2>Senior Coaches</h2>
-        <div class="trainer-grid">
-          <a href="Kah_Wei.html" class="trainer-card"><img src="Kah Wei.jpg" alt="Kah Wei"><h3>Kah Wei</h3><p>Senior Coach</p></a>
-          <a href="ivan.html" class="trainer-card"><img src="Ivan.jpg" alt="Ivan"><h3>Ivan</h3><p>Senior Coach</p></a>
-          <a href="shawn.html" class="trainer-card"><img src="Shawn.jpg" alt="Shawn"><h3>Shawn</h3><p>Senior Coach</p></a>
-          <a href="Li_Ting.html" class="trainer-card"><img src="Li Ting.jpg" alt="Li Ting"><h3>Li Ting</h3><p>Senior Coach</p></a>
-          <a href="kheng.html" class="trainer-card"><img src="Kheng.jpg" alt="Kheng"><h3>Kheng</h3><p>Senior Coach</p></a>
-          <a href="vanessa.html" class="trainer-card"><img src="Vanessa .jpg" alt="Vanessa"><h3>Vanessa</h3><p>Senior Coach</p></a>
-          <a href="iqmal.html" class="trainer-card"><img src="Iqmal.jpg" alt="Iqmal"><h3>Iqmal</h3><p>Senior Coach</p></a>
-          <a href="firdaus.html" class="trainer-card"><img src="Firdaus.jpg" alt="Firdaus"><h3>Firdaus</h3><p>Senior Coach</p></a>
+
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Senior Coaches</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-center">
+          <a href="Kah_Wei.html" class="trainer-card"><img src="Kah Wei.jpg" alt="Kah Wei"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kah Wei</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="ivan.html" class="trainer-card"><img src="Ivan.jpg" alt="Ivan"><div class="p-4 text-center"><h3 class="font-bold text-lg">Ivan</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="shawn.html" class="trainer-card"><img src="Shawn.jpg" alt="Shawn"><div class="p-4 text-center"><h3 class="font-bold text-lg">Shawn</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="Li_Ting.html" class="trainer-card"><img src="Li Ting.jpg" alt="Li Ting"><div class="p-4 text-center"><h3 class="font-bold text-lg">Li Ting</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="kheng.html" class="trainer-card"><img src="Kheng.jpg" alt="Kheng"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kheng</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="vanessa.html" class="trainer-card"><img src="Vanessa .jpg" alt="Vanessa"><div class="p-4 text-center"><h3 class="font-bold text-lg">Vanessa</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="iqmal.html" class="trainer-card"><img src="Iqmal.jpg" alt="Iqmal"><div class="p-4 text-center"><h3 class="font-bold text-lg">Iqmal</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
+          <a href="firdaus.html" class="trainer-card"><img src="Firdaus.jpg" alt="Firdaus"><div class="p-4 text-center"><h3 class="font-bold text-lg">Firdaus</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
         </div>
       </div>
-      <div class="trainer-section">
-        <h2>Coaches</h2>
-        <div class="trainer-grid">
-          <a href="roy.html" class="trainer-card"><img src="Roy.jpg" alt="Roy"><h3>Roy</h3><p>Coach</p></a>
-          <a href="nicole.html" class="trainer-card"><img src="Nicole.jpg" alt="Nicole"><h3>Nicole</h3><p>Coach</p></a>
-          <a href="bernard.html" class="trainer-card"><img src="Bernard.jpg" alt="Bernard"><h3>Bernard</h3><p>Coach</p></a>
-          <a href="kyles.html" class="trainer-card"><img src="Kyles.jpg" alt="Kyles"><h3>Kyles</h3><p>Coach</p></a>
-          <a href="brandon.html" class="trainer-card"><img src="Bradon.jpg" alt="Brandon"><h3>Brandon</h3><p>Coach</p></a>
-          <a href="Samuel.html" class="trainer-card"><img src="Samuel.jpg" alt="Samuel"><h3>Samuel</h3><p>Coach</p></a>
-          <a href="firdanil.html" class="trainer-card"><img src="Firdnail.jpg" alt="Firdanil"><h3>Firdanil</h3><p>Coach</p></a>
-          <a href="erynna.html" class="trainer-card"><img src="Trainer18.jpg" alt="Erynna"><h3>Erynna</h3><p>Coach</p></a>
+
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Coaches</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-center">
+          <a href="roy.html" class="trainer-card"><img src="Roy.jpg" alt="Roy"><div class="p-4 text-center"><h3 class="font-bold text-lg">Roy</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="nicole.html" class="trainer-card"><img src="Nicole.jpg" alt="Nicole"><div class="p-4 text-center"><h3 class="font-bold text-lg">Nicole</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="bernard.html" class="trainer-card"><img src="Bernard.jpg" alt="Bernard"><div class="p-4 text-center"><h3 class="font-bold text-lg">Bernard</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="kyles.html" class="trainer-card"><img src="Kyles.jpg" alt="Kyles"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kyles</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="brandon.html" class="trainer-card"><img src="Bradon.jpg" alt="Brandon"><div class="p-4 text-center"><h3 class="font-bold text-lg">Brandon</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="Samuel.html" class="trainer-card"><img src="Samuel.jpg" alt="Samuel"><div class="p-4 text-center"><h3 class="font-bold text-lg">Samuel</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="firdanil.html" class="trainer-card"><img src="Firdnail.jpg" alt="Firdanil"><div class="p-4 text-center"><h3 class="font-bold text-lg">Firdanil</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="erynna.html" class="trainer-card"><img src="Trainer18.jpg" alt="Erynna"><div class="p-4 text-center"><h3 class="font-bold text-lg">Erynna</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="jeremy.html" class="trainer-card"><img src="Jeremy.jpg" alt="Jeremy"><div class="p-4 text-center"><h3 class="font-bold text-lg">Jeremy</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="ber.html" class="trainer-card"><img src="Ber.jpg" alt="Ber"><div class="p-4 text-center"><h3 class="font-bold text-lg">Ber</h3><p class="text-sm text-gray-600">Coach</p></div></a>
+          <a href="justin.html" class="trainer-card"><img src="Justin.jpg" alt="Justin"><div class="p-4 text-center"><h3 class="font-bold text-lg">Justin</h3><p class="text-sm text-gray-600">Coach</p></div></a>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="pricing">
-      <h2>Training Packages</h2>
-      <div class="pricing-cards">
-        <div class="card">
-          <h3>Full Throttle</h3>
-          <p class="price">$105/session</p>
-          <ul>
+    <section id="pricing" class="bg-red-600 text-white py-12 text-center">
+      <h2 class="text-3xl font-bold mb-8">Training Packages</h2>
+      <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+          <h3 class="text-xl font-bold mb-2">Full Throttle</h3>
+          <p class="text-2xl font-bold mb-4">$105/session</p>
+          <ul class="text-sm text-gray-800 space-y-1">
             <li>12-week commitment</li>
             <li>For serious transformation</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Accelerate</h3>
-          <p class="price">$110/session</p>
-          <ul>
+        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+          <h3 class="text-xl font-bold mb-2">Accelerate</h3>
+          <p class="text-2xl font-bold mb-4">$110/session</p>
+          <ul class="text-sm text-gray-800 space-y-1">
             <li>10 sessions package</li>
             <li>For steady progress</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Kickstart</h3>
-          <p class="price">$120/session</p>
-          <ul>
+        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+          <h3 class="text-xl font-bold mb-2">Kickstart</h3>
+          <p class="text-2xl font-bold mb-4">$120/session</p>
+          <ul class="text-sm text-gray-800 space-y-1">
             <li>3 sessions upfront</li>
             <li>1-month commitment</li>
           </ul>
         </div>
       </div>
 
-      <h2>Full Throttle Package Details</h2>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>FT1</h3>
-          <p>Once Every Twice a Week</p>
-          <p class="price">$105</p>
+      <h2 class="text-3xl font-bold mb-8">Full Throttle Package Details</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white text-red-600 rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">FT1</h3>
+          <p class="text-sm">Once Every Twice a Week</p>
+          <p class="text-xl font-bold mt-2">$105</p>
         </div>
-        <div class="pricing-card">
-          <h3>FT2</h3>
-          <p>Once Every Week</p>
-          <p class="price">$210</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">FT2</h3>
+          <p class="text-sm">Once Every Week</p>
+          <p class="text-xl font-bold mt-2">$210</p>
         </div>
-        <div class="pricing-card">
-          <h3>FT4</h3>
-          <p>Twice Every Week</p>
-          <p class="price">$420</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">FT4</h3>
+          <p class="text-sm">Twice Every Week</p>
+          <p class="text-xl font-bold mt-2">$420</p>
         </div>
-        <div class="pricing-card">
-          <h3>FT6</h3>
-          <p>Thrice Every Week</p>
-          <p class="price">$630</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">FT6</h3>
+          <p class="text-sm">Thrice Every Week</p>
+          <p class="text-xl font-bold mt-2">$630</p>
         </div>
       </div>
     </section>
