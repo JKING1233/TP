@@ -56,32 +56,53 @@
       margin-bottom: 20px;
     }
 
-    .certifications {
+    .section-toggle {
+      margin-bottom: 20px;
+    }
+
+    .section-toggle button {
+      background-color: #fff;
+      color: #d0001f;
+      border: 2px solid #fff;
+      padding: 8px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .section-toggle button:hover {
+      background-color: #fff;
+      color: #d0001f;
+    }
+
+    .section-block {
       background: #b8001a;
       padding: 15px;
       border-radius: 6px;
       margin-bottom: 20px;
     }
 
-    .certifications h3 {
+    .section-block h3 {
       margin-top: 0;
       font-size: 1.2em;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    .certifications ul {
+    .section-block ul {
       list-style: none;
       padding-left: 0;
     }
 
-    .certifications li {
+    .section-block li {
       margin: 6px 0;
       padding-left: 16px;
       position: relative;
     }
 
-    .certifications li::before {
+    .section-block li::before {
       content: "•";
       color: white;
       position: absolute;
@@ -167,40 +188,53 @@
 </head>
 <body>
 
+  <!-- Profile Card -->
   <div class="profile-card">
     <div class="profile-image">
       <img src="Samuel.jpg" alt="Samuel Lim - Trainer" />
     </div>
     <div class="profile-details">
       <h1>Samuel Lim</h1>
-      <h2>Strength & Conditioning, Muscle Hypertrophy, Weight Loss</h2>
+      <h2>Coach</h2>
       <div class="interests">
         <strong>Into:</strong> Fashion | Football | Anime
       </div>
-      <div class="certifications">
-        <h3>Certifications</h3>
-        <ul>
-          <li>ACE-Certified Personal Trainer (ACE-CT)</li>
-          <li>Diploma in Sports Management</li>
-          <li>Sports Analysis & Technology</li>
-          <li>Fitness Design Management</li>
+
+      <!-- Buttons to toggle skills / certifications -->
+      <div class="section-toggle">
+        <button onclick="showSkills()">Show Skills</button>
+        <button onclick="showCertifications()">Show Certifications</button>
+      </div>
+
+      <!-- Dynamic content area -->
+      <div id="toggle-section" class="section-block">
+        <h3 id="toggle-title">Skills</h3>
+        <ul id="toggle-content">
+          <li>Strength & Conditioning</li>
+          <li>Muscle HyperTrophy</li>
+          <li>Weight Loss</li>
         </ul>
       </div>
+
+      <!-- Philosophy -->
       <div class="philosophy">
         <h3>Philosophy</h3>
-        <p>"Consistency is more important than perfection."</p>
+        <p>"Consistency is More important then perfection"</p>
       </div>
-      
+
+      <!-- Contact Info -->
       <div class="contact-info">
         <h3>Contact Information</h3>
         <p><strong>Phone (WhatsApp):</strong> <a href="https://wa.me/6588170495" style="color: #fff;">+65 88170495</a></p>
         <p><strong>Email:</strong> <a href="mailto:samuel.lim@virginactive.com.sg" style="color: #fff;">samuel.lim@virginactive.com.sg</a></p>
       </div>
-      
+
+      <!-- Back link -->
       <a class="back-link" href="index.html">← Back to Home</a>
     </div>
   </div>
 
+  <!-- Testimonials -->
   <section class="testimonial-section">
     <div class="testimonial-container">
       <h2>Client Testimonials</h2>
@@ -208,6 +242,30 @@
     </div>
   </section>
 
-</body>
-</html>
-
+    <!-- JavaScript for toggling skills / certifications -->
+    <script>
+      const skills = [
+        "Strength & Conditioning",
+        "Muscle HyperTrophy",
+        "Weight Loss"
+      ];
+  
+      const certifications = [
+        "Ace-Certified Personal Trainer (ACE-CPT)",
+        "Diploma In Sport Management",
+        "Sport Analysis & Techology ",
+        "Fitness Design Management"
+      ];
+  
+      function showSkills() {
+        document.getElementById("toggle-title").textContent = "Skills";
+        document.getElementById("toggle-content").innerHTML = skills.map(item => `<li>${item}</li>`).join('');
+      }
+  
+      function showCertifications() {
+        document.getElementById("toggle-title").textContent = "Certifications";
+        document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
+      }
+    </script>
+  </body>
+  </html>
