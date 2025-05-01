@@ -156,28 +156,36 @@
       text-decoration: underline;
     }
 
-    .testimonial-inline {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 6px;
-      margin-top: 30px;
-      color: #fff;
+    /* NEW TESTIMONIAL SECTION */
+    .testimonial-section {
+      max-width: 1000px;
+      margin: 20px auto 60px;
+      background-color: #ffffff;
+      color: #333;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    .testimonial-inline h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #fff;
+    .testimonial-section h2 {
+      margin-top: 0;
+      font-size: 2em;
+      color: #d0001f;
+      text-align: center;
     }
 
-    .testimonial-inline .placeholder {
+    .testimonial-placeholder {
       font-style: italic;
-      color: #f0f0f0;
+      text-align: center;
+      color: #888;
+      font-size: 1.1em;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Profile Card -->
   <div class="profile-card">
     <div class="profile-image">
       <img src="Kheng.jpg" alt="Kheng - Trainer" />
@@ -217,13 +225,14 @@
         <p><strong>Email:</strong> <a href="mailto:kheng@virginactive.com.sg" style="color: #fff;">Kheng@virginactive.com.sg</a></p>
       </div>
 
-      <div class="testimonial-inline">
-        <h3>Client Testimonials</h3>
-        <p class="placeholder">No testimonials available yet. Check back soon!</p>
-      </div>
-
       <a class="back-link" href="index.html">← Back to Home</a>
     </div>
+  </div>
+
+  <!-- Testimonial Section -->
+  <div class="testimonial-section">
+    <h2>Client Testimonials</h2>
+    <p class="testimonial-placeholder">No testimonials available yet. Check back soon!</p>
   </div>
 
   <script>
@@ -253,4 +262,5 @@
   </script>
 </body>
 </html>
+
 
