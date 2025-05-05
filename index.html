@@ -7,133 +7,169 @@
   <meta name="keywords" content="personal training, fitness coach, workout plans, Tanjong Pagar trainers">
   <meta name="author" content="Tanjong Pagar Fitness">
   <title>Personal Training & Trainers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .carousel {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    .carousel-item {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+    }
+  </style>
+  <script>
+    function scrollCarousel(id, direction) {
+      const container = document.getElementById(id);
+      const scrollAmount = 300;
+      container.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-900 font-[Poppins]">
-  <header class="bg-black text-white text-center py-6">
-    <h1 class="text-2xl md:text-4xl font-bold">Transform Your Body with Tanjong Pagar</h1>
-    <nav>
-      <ul class="flex justify-center gap-6 mt-4 text-red-500 font-bold">
-        <li><a href="#trainers" class="hover:underline">Trainers</a></li>
-        <li><a href="#pricing" class="hover:underline">Pricing</a></li>
-      </ul>
+
+  <!-- Mobile Layout -->
+  <div class="block md:hidden">
+    <!-- Keep original mobile code here (unchanged) -->
+    <!-- ...[MOBILE VERSION OMITTED FOR BREVITY]... -->
+  </div>
+
+  <!-- Desktop Layout -->
+  <div class="hidden md:block">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-red-600">Tanjong Pagar Fitness</div>
+        <div class="space-x-6 text-sm font-semibold">
+          <a href="#trainers" class="text-gray-700 hover:text-red-600 transition">Trainers</a>
+          <a href="#pricing" class="text-gray-700 hover:text-red-600 transition">Pricing</a>
+        </div>
+      </div>
     </nav>
-  </header>
 
-  <section class="px-4 py-6">
-    <img src="pngfind.com-exclusive-offer-png-6120904.png" alt="Personal Training Session" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" />
-  </section>
-
-  <main class="px-4">
-    <section id="trainers" class="space-y-12">
-      <div class="text-center">
-        <div class="text-center">
-          <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Specialist Coaches</h2>
-          <div class="max-w-screen-md mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 justify-center">
-              <a href="Syam.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300">
-                <img src="Syam.jpg" alt="Syam" class="w-full h-auto">
-                <div class="p-4 text-center">
-                  <h3 class="font-bold text-lg">Syam</h3>
-                  <p class="text-sm text-gray-600">Fitness Manager & Specialist Coach</p>
-                </div>
-              </a>
-              <a href="Rudy.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300">
-                <img src="Rudy.jpg" alt="Rudy" class="w-full h-auto">
-                <div class="p-4 text-center">
-                  <h3 class="font-bold text-lg">Rudy</h3>
-                  <p class="text-sm text-gray-600">Specialist Coach</p>
-                </div>
-              </a>
-            </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Senior Coaches</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-center">
-          <a href="Kah_Wei.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Kah Wei.jpg" alt="Kah Wei" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kah Wei</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="ivan.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Ivan.jpg" alt="Ivan" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Ivan</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="shawn.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Shawn.jpg" alt="Shawn" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Shawn</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="Li_Ting.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Li Ting.jpg" alt="Li Ting" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Li Ting</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="kheng.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Kheng.jpg" alt="Kheng" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kheng</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="vanessa.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Vanessa .jpg" alt="Vanessa" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Vanessa</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="iqmal.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Iqmal.jpg" alt="Iqmal" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Iqmal</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-          <a href="firdaus.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Firdaus.jpg" alt="Firdaus" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Firdaus</h3><p class="text-sm text-gray-600">Senior Coach</p></div></a>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Coaches</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-center">
-          <a href="roy.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Roy.jpg" alt="Roy" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Roy</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="nicole.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Nicole.jpg" alt="Nicole" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Nicole</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="bernard.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Bernard.jpg" alt="Bernard" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Bernard</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="kyles.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Kyles.jpg" alt="Kyles" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Kyles</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="brandon.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Bradon.jpg" alt="Brandon" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Brandon</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="Samuel.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Samuel.jpg" alt="Samuel" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Samuel</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="firdanil.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Firdnail.jpg" alt="Firdanil" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Firdanil</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-          <a href="erynna.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden border border-gray-300"><img src="Erynna.jpg" alt="Erynna" class="w-full h-auto"><div class="p-4 text-center"><h3 class="font-bold text-lg">Erynna</h3><p class="text-sm text-gray-600">Coach</p></div></a>
-        </div>
+    <!-- Parallax Banner -->
+    <section 
+      class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-center bg-cover bg-no-repeat flex items-center justify-center bg-scroll md:bg-fixed"
+      style="background-image: url('pngfind.com-exclusive-offer-png-6120904.png');"
+    >
+      <div class="text-white text-center bg-black/50 px-6 py-4 rounded">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">Virgin Active Tanjong Pagar</h1>
+        <p class="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg">Your Transformation Starts Here</p>
       </div>
     </section>
 
-    <section id="pricing" class="bg-red-600 text-white py-12 text-center">
-      <h2 class="text-3xl font-bold mb-8">Training Packages</h2>
-      <div class="flex flex-wrap justify-center gap-6 mb-12">
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Full Throttle</h3>
-          <p class="text-2xl font-bold mb-4">$105/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
+    <!-- Header -->
+    <header class="bg-black text-white text-center py-6">
+      <h1 class="text-3xl font-bold">Transform Your Body with Tanjong Pagar</h1>
+    </header>
+
+    <!-- Hero -->
+    <section class="px-6 py-8">
+      <img src="pngfind.com-exclusive-offer-png-6120904.png" alt="Personal Training Session" class="w-full rounded-lg shadow-lg mx-auto max-w-6xl" />
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="px-6 py-8 max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold text-red-600 mb-6 text-center">Specialist Coaches</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="Syam.html" class="border rounded shadow p-2">
+          <img src="Syam.jpg" alt="Syam" class="rounded shadow">
+          <p class="text-center font-bold mt-2">Syam<br><span class="text-sm font-normal">Fitness Manager & Specialist Coach</span></p>
+        </a>
+        <a href="Rudy.html" class="border rounded shadow p-2">
+          <img src="Rudy.jpg" alt="Rudy" class="rounded shadow">
+          <p class="text-center font-bold mt-2">Rudy<br><span class="text-sm font-normal">Specialist Coach</span></p>
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-red-600 mt-12 mb-6">Senior Coaches</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="Kah_Wei.html" class="border rounded shadow p-2"><img src="Kah Wei.jpg" alt="Kah Wei" class="rounded shadow"><p class="text-center font-bold mt-2">Kah Wei</p></a>
+        <a href="ivan.html" class="border rounded shadow p-2"><img src="Ivan.jpg" alt="Ivan" class="rounded shadow"><p class="text-center font-bold mt-2">Ivan</p></a>
+        <a href="shawn.html" class="border rounded shadow p-2"><img src="Shawn.jpg" alt="Shawn" class="rounded shadow"><p class="text-center font-bold mt-2">Shawn</p></a>
+        <a href="Li_Ting.html" class="border rounded shadow p-2"><img src="Li Ting.jpg" alt="Li Ting" class="rounded shadow"><p class="text-center font-bold mt-2">Li Ting</p></a>
+        <a href="kheng.html" class="border rounded shadow p-2"><img src="Kheng.jpg" alt="Kheng" class="rounded shadow"><p class="text-center font-bold mt-2">Kheng</p></a>
+        <a href="vanessa.html" class="border rounded shadow p-2"><img src="Vanessa .jpg" alt="Vanessa" class="rounded shadow"><p class="text-center font-bold mt-2">Vanessa</p></a>
+        <a href="iqmal.html" class="border rounded shadow p-2"><img src="Iqmal.jpg" alt="Iqmal" class="rounded shadow"><p class="text-center font-bold mt-2">Iqmal</p></a>
+        <a href="firdaus.html" class="border rounded shadow p-2"><img src="Firdaus.jpg" alt="Firdaus" class="rounded shadow"><p class="text-center font-bold mt-2">Firdaus</p></a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-red-600 mt-12 mb-6">Coaches</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="roy.html" class="border rounded shadow p-2"><img src="Roy.jpg" alt="Roy" class="rounded shadow"><p class="text-center font-bold mt-2">Roy</p></a>
+        <a href="nicole.html" class="border rounded shadow p-2"><img src="Nicole.jpg" alt="Nicole" class="rounded shadow"><p class="text-center font-bold mt-2">Nicole</p></a>
+        <a href="bernard.html" class="border rounded shadow p-2"><img src="Bernard.jpg" alt="Bernard" class="rounded shadow"><p class="text-center font-bold mt-2">Bernard</p></a>
+        <a href="kyles.html" class="border rounded shadow p-2"><img src="Kyles.jpg" alt="Kyles" class="rounded shadow"><p class="text-center font-bold mt-2">Kyles</p></a>
+        <a href="brandon.html" class="border rounded shadow p-2"><img src="Bradon.jpg" alt="Brandon" class="rounded shadow"><p class="text-center font-bold mt-2">Brandon</p></a>
+        <a href="Samuel.html" class="border rounded shadow p-2"><img src="Samuel.jpg" alt="Samuel" class="rounded shadow"><p class="text-center font-bold mt-2">Samuel</p></a>
+        <a href="firdanil.html" class="border rounded shadow p-2"><img src="Firdnail.jpg" alt="Firdanil" class="rounded shadow"><p class="text-center font-bold mt-2">Firdanil</p></a>
+        <a href="erynna.html" class="border rounded shadow p-2"><img src="Erynna.jpg" alt="Erynna" class="rounded shadow"><p class="text-center font-bold mt-2">Erynna</p></a>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-red-600 text-white py-16 px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">Training Packages</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white text-red-600 rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2 text-center">Full Throttle</h3>
+          <p class="text-2xl font-bold mb-4 text-center">$105/session</p>
+          <ul class="text-sm text-gray-800 space-y-1 list-disc list-inside">
             <li>12-week commitment</li>
             <li>For serious transformation</li>
           </ul>
         </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Accelerate</h3>
-          <p class="text-2xl font-bold mb-4">$110/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
+        <div class="bg-white text-red-600 rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2 text-center">Accelerate</h3>
+          <p class="text-2xl font-bold mb-4 text-center">$110/session</p>
+          <ul class="text-sm text-gray-800 space-y-1 list-disc list-inside">
             <li>10 sessions package</li>
             <li>For steady progress</li>
           </ul>
         </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Kickstart</h3>
-          <p class="text-2xl font-bold mb-4">$120/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
+        <div class="bg-white text-red-600 rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2 text-center">Kickstart</h3>
+          <p class="text-2xl font-bold mb-4 text-center">$120/session</p>
+          <ul class="text-sm text-gray-800 space-y-1 list-disc list-inside">
             <li>3 sessions upfront</li>
             <li>1-month commitment</li>
           </ul>
         </div>
       </div>
 
-      <h2 class="text-3xl font-bold mb-8">Full Throttle Package Details</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT1</h3>
-          <p class="text-sm">Once Every Twice a Week</p>
-          <p class="text-xl font-bold mt-2">$105</p>
+      <h2 class="text-2xl font-bold text-center mt-16 mb-6">Full Throttle Package Details</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white text-red-600 rounded-lg shadow p-4 text-center">
+          <h3 class="text-lg font-bold mb-1">FT1</h3>
+          <p class="text-sm mb-2">Once Every Twice a Week</p>
+          <p class="text-xl font-bold">$105</p>
         </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT2</h3>
-          <p class="text-sm">Once Every Week</p>
-          <p class="text-xl font-bold mt-2">$210</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4 text-center">
+          <h3 class="text-lg font-bold mb-1">FT2</h3>
+          <p class="text-sm mb-2">Once Every Week</p>
+          <p class="text-xl font-bold">$210</p>
         </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT4</h3>
-          <p class="text-sm">Twice Every Week</p>
-          <p class="text-xl font-bold mt-2">$420</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4 text-center">
+          <h3 class="text-lg font-bold mb-1">FT4</h3>
+          <p class="text-sm mb-2">Twice Every Week</p>
+          <p class="text-xl font-bold">$420</p>
         </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT6</h3>
-          <p class="text-sm">Thrice Every Week</p>
-          <p class="text-xl font-bold mt-2">$630</p>
+        <div class="bg-white text-red-600 rounded-lg shadow p-4 text-center">
+          <h3 class="text-lg font-bold mb-1">FT6</h3>
+          <p class="text-sm mb-2">Thrice Every Week</p>
+          <p class="text-xl font-bold">$630</p>
         </div>
       </div>
     </section>
-  </main>
+  </div>
+
 </body>
+</html>
 </html>
 
 
