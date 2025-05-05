@@ -134,62 +134,119 @@
     </section>
 
     <!-- Pricing Section stays unchanged -->
-    <section id="pricing" class="bg-red-600 text-white py-12 text-center">
-      <h2 class="text-3xl font-bold mb-8">Training Packages</h2>
-      <div class="flex flex-wrap justify-center gap-6 mb-12">
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Full Throttle</h3>
-          <p class="text-2xl font-bold mb-4">$105/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>12-week commitment</li>
-            <li>For serious transformation</li>
-          </ul>
-        </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Accelerate</h3>
-          <p class="text-2xl font-bold mb-4">$110/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>10 sessions package</li>
-            <li>For steady progress</li>
-          </ul>
-        </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-          <h3 class="text-xl font-bold mb-2">Kickstart</h3>
-          <p class="text-2xl font-bold mb-4">$125/session</p>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>3 sessions upfront</li>
-            <li>1-month commitment</li>
-          </ul>
-        </div>
-      </div>
+<section id="pricing" class="bg-red-600 text-white py-12 text-center">
+  <h2 class="text-3xl font-bold mb-8">Training Packages</h2>
 
-      <h2 class="text-3xl font-bold mb-8">Full Throttle Package Details</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT1</h3>
-          <p class="text-sm">Once Every Twice a Week</p>
-          <p class="text-xl font-bold mt-2">$105</p>
-        </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT2</h3>
-          <p class="text-sm">Once Every Week</p>
-          <p class="text-xl font-bold mt-2">$210</p>
-        </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT4</h3>
-          <p class="text-sm">Twice Every Week</p>
-          <p class="text-xl font-bold mt-2">$420</p>
-        </div>
-        <div class="bg-white text-red-600 rounded-lg shadow p-4">
-          <h3 class="text-lg font-bold">FT6</h3>
-          <p class="text-sm">Thrice Every Week</p>
-          <p class="text-xl font-bold mt-2">$630</p>
-        </div>
-      </div>
-    </section>
+  <!-- Dropdown -->
+  <div class="mb-8">
+    <label for="coachType" class="block mb-2 text-lg font-semibold">Select Coach Type:</label>
+    <select id="coachType" class="text-black px-4 py-2 rounded shadow">
+      <option value="coach">Coach</option>
+      <option value="senior">Senior Coach</option>
+      <option value="specialist">Specialist Coach</option>
+    </select>
+  </div>
+
+  <!-- Main Packages -->
+  <div class="flex flex-wrap justify-center gap-6 mb-12">
+    <!-- Full Throttle -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+      <h3 class="text-xl font-bold mb-2">Full Throttle</h3>
+      <p class="text-2xl font-bold mb-4 coach-price">$105/session</p>
+      <p class="text-2xl font-bold mb-4 senior-price hidden">$120/session</p>
+      <p class="text-2xl font-bold mb-4 specialist-price hidden">$135/session</p>
+      <ul class="text-sm text-gray-800 space-y-1">
+        <li>12-week commitment</li>
+        <li>For serious transformation</li>
+      </ul>
+    </div>
+
+    <!-- Accelerate -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+      <h3 class="text-xl font-bold mb-2">Accelerate</h3>
+      <p class="text-2xl font-bold mb-4 coach-price">$110/session</p>
+      <p class="text-2xl font-bold mb-4 senior-price hidden">$125/session</p>
+      <p class="text-2xl font-bold mb-4 specialist-price hidden">$140/session</p>
+      <ul class="text-sm text-gray-800 space-y-1">
+        <li>10 sessions package</li>
+        <li>For steady progress</li>
+      </ul>
+    </div>
+
+    <!-- Kickstart -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
+      <h3 class="text-xl font-bold mb-2">Kickstart</h3>
+      <p class="text-2xl font-bold mb-4 coach-price">$125/session</p>
+      <p class="text-2xl font-bold mb-4 senior-price hidden">$140/session</p>
+      <p class="text-2xl font-bold mb-4 specialist-price hidden">$155/session</p>
+      <ul class="text-sm text-gray-800 space-y-1">
+        <li>3 sessions upfront</li>
+        <li>1-month commitment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Full Throttle Breakdown -->
+  <h2 class="text-3xl font-bold mb-8">Full Throttle Package Details</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+    <!-- FT1 -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-4">
+      <h3 class="text-lg font-bold">FT1</h3>
+      <p class="text-sm">Once Every Twice a Week</p>
+      <p class="text-xl font-bold mt-2 coach-price">$105</p>
+      <p class="text-xl font-bold mt-2 senior-price hidden">$120</p>
+      <p class="text-xl font-bold mt-2 specialist-price hidden">$135</p>
+    </div>
+
+    <!-- FT2 -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-4">
+      <h3 class="text-lg font-bold">FT2</h3>
+      <p class="text-sm">Once Every Week</p>
+      <p class="text-xl font-bold mt-2 coach-price">$210</p>
+      <p class="text-xl font-bold mt-2 senior-price hidden">$240</p>
+      <p class="text-xl font-bold mt-2 specialist-price hidden">$270</p>
+    </div>
+
+    <!-- FT4 -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-4">
+      <h3 class="text-lg font-bold">FT4</h3>
+      <p class="text-sm">Twice Every Week</p>
+      <p class="text-xl font-bold mt-2 coach-price">$420</p>
+      <p class="text-xl font-bold mt-2 senior-price hidden">$480</p>
+      <p class="text-xl font-bold mt-2 specialist-price hidden">$540</p>
+    </div>
+
+    <!-- FT6 -->
+    <div class="bg-white text-red-600 rounded-lg shadow p-4">
+      <h3 class="text-lg font-bold">FT6</h3>
+      <p class="text-sm">Thrice Every Week</p>
+      <p class="text-xl font-bold mt-2 coach-price">$630</p>
+      <p class="text-xl font-bold mt-2 senior-price hidden">$720</p>
+      <p class="text-xl font-bold mt-2 specialist-price hidden">$810</p>
+    </div>
+  </div>
+</section>
+<script>
+  document.getElementById("coachType").addEventListener("change", function () {
+    const selected = this.value;
+
+    document.querySelectorAll(".coach-price, .senior-price, .specialist-price").forEach(el => {
+      el.classList.add("hidden");
+    });
+
+    document.querySelectorAll(`.${selected}-price`).forEach(el => {
+      el.classList.remove("hidden");
+    });
+  });
+
+  // Set default view to coach
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("coachType").value = "coach";
+    document.querySelectorAll(".coach-price").forEach(el => el.classList.remove("hidden"));
+  });
+</script>
   </main>
 </body>
 </html>
-</html> 
 
 
