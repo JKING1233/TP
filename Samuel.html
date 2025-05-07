@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samuel Lim - Trainer Profile</title>
-  <style>
+ <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -56,11 +56,12 @@
       margin-bottom: 20px;
     }
 
-    .section-toggle {
+    /* --- START OF CSS CHANGES FOR TOGGLING AND ALWAYS VISIBLE SECTIONS --- */
+    .section-toggle { /* CSS for the button container */
       margin-bottom: 20px;
     }
 
-    .section-toggle button {
+    .section-toggle button { /* CSS for the toggle buttons */
       background-color: #fff;
       color: #d0001f;
       border: 2px solid #fff;
@@ -77,7 +78,7 @@
       color: #d0001f;
     }
 
-    .section-block {
+    .section-block { /* CSS for the toggled content area (Skills or Certifications) */
       background: #b8001a;
       padding: 15px;
       border-radius: 6px;
@@ -109,7 +110,7 @@
       left: 0;
     }
 
-    .philosophy {
+    .philosophy { /* CSS for the always visible Philosophy section */
       background-color: rgba(255, 255, 255, 0.1);
       padding: 15px 20px;
       border-left: 5px solid #ffffff;
@@ -131,7 +132,7 @@
       margin: 0;
     }
 
-    .contact-info {
+    .contact-info { /* CSS for the always visible Contact Info section */
       margin-top: 30px;
       padding: 20px;
       background-color: #d0001f;
@@ -148,13 +149,30 @@
       font-size: 1.1em;
       color: #fff;
     }
+    /* --- END OF CSS CHANGES FOR TOGGLING AND ALWAYS VISIBLE SECTIONS --- */
 
-    .back-link {
+
+    /* --- START OF CSS CHANGE FOR BACK LINK STYLING --- */
+    .back-link { /* CSS for the Back to Home link, styled as a button */
       display: inline-block;
       margin-top: 30px;
-      color: #fff;
-      text-decoration: underline;
+      background-color: #fff; /* White background */
+      color: #d0001f; /* Red text color */
+      border: 2px solid #fff; /* White border */
+      padding: 10px 20px; /* Add padding */
+      cursor: pointer; /* Indicate it's clickable */
+      font-weight: bold; /* Bold text */
+      border-radius: 5px; /* Rounded corners */
+      text-decoration: none; /* Remove underline */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
     }
+
+    .back-link:hover {
+      background-color: #fff; /* Keep background white on hover */
+      color: #d0001f; /* Keep text red on hover */
+    }
+    /* --- END OF CSS CHANGE FOR BACK LINK STYLING --- */
+
 
     /* Testimonials Section */
     .testimonial-section {
