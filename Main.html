@@ -3,30 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Center</title>
+    <title>Virgin Active Fitness Coaching</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom transition for smooth sliding */
         .sidebar-transition {
             transition: transform 0.3s ease-in-out;
         }
+
+        /* Added CSS for the sticky trainer bar */
+        .sticky-trainer-bar {
+            position: sticky;
+            top: 0;
+            /* Increased z-index slightly to be above main content but below sidebar/hamburger */
+            z-index: 20;
+        }
+
+        /* Style for the logo inside the trainer bar */
+        .trainer-bar-logo {
+            position: absolute;
+            /* Position from the right, adjust based on hamburger button width and desired spacing */
+            right: 5rem; /* Example: Adjust this value */
+            top: 50%; /* Vertically center the logo */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            width: 80px; /* Adjust to match trainer bar height */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 10; /* Lower than the hamburger button */
+        }
+
+        /* Optional: Adjust logo size in sidebar if needed */
+        .sidebar-logo {
+            width: 80px; /* Adjust this value to match the desired height of the trainer bar */
+        }
+
+        /* Styles from your provided code */
+        .price-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .package-detail:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .coach-select {
+            background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23ffffff' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/12px 12px;
+            padding-right: 2.5rem; /* Add padding to make space for the custom arrow */
+        }
+         .trainer-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .trainer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Virgin Active Logo on Main Page (Top Right) -->
-    <img id="mainLogo" src="virgin-active-logo.png" alt="Virgin Active Logo" class="fixed top-4 right-20 z-40 w-32">
-
     <!-- Hamburger Button -->
-    <button id="menuButton" class="fixed right-4 top-4 z-50 p-3 bg-gray-300 text-black rounded-lg shadow-lg hover:bg-gray-400"> <!-- Changed background and text color -->
+    <!-- Increased z-index to ensure it's above the logo -->
+    <button id="menuButton" class="fixed right-4 top-4 z-50 p-3 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-colors">
         ☰
     </button>
 
     <!-- Side Navigation -->
-    <aside id="sideNav" class="w-64 h-screen bg-black fixed right-0 top-0 sidebar-transition transform translate-x-full">
+    <aside id="sideNav" class="w-64 h-screen bg-black fixed right-0 top-0 sidebar-transition transform translate-x-full z-40">
         <!-- Virgin Active Logo in Sidebar -->
         <div class="flex justify-center pt-4">
-             <img src="virgin-active-logo.png" alt="Virgin Active Logo" class="w-32">
+             <img src="virgin-active-logo.png" alt="Virgin Active Logo" class="sidebar-logo">
         </div>
 
         <!-- Navigation Content -->
@@ -54,45 +97,49 @@
     </aside>
 
     <main>
-        <!-- Our Trainers Bar -->
-        <div class="bg-black text-white text-center py-8">
-            <h1 class="text-3xl font-bold">Our Trainers</h1>
+        <!-- Our Trainers Bar with Logo -->
+        <!-- Added sticky-trainer-bar class and placed logo inside -->
+        <!-- Adjusted py- class for height control -->
+        <div id="trainerBar" class="bg-black text-white text-center py-6 sticky-trainer-bar flex items-center justify-center relative">
+             <!-- Virgin Active Logo inside the bar - Now positioned absolutely -->
+             <img id="mainLogo" src="virgin-active-logo.png" alt="Virgin Active Logo" class="trainer-bar-logo">
+             <h1 class="text-3xl font-bold">Meet Our Trainer</h1>
         </div>
 
         <!-- Specialist Coaches Section -->
         <section id="trainers">
-            <div class="text-center py-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-8">Specialist Coaches</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 mx-auto max-w-7xl">
+            <div class="text-center py-16 px-4">
+                <h2 class="text-3xl font-bold text-red-600 mb-12">Specialist Coaches</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     <!-- Syam -->
                     <div class="flex justify-center">
-                        <a href="Syam.html" class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-xs overflow-hidden">
-                            <img src="Syam.jpg" alt="Syam" class="w-full h-72 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold mb-1">Syam</h3>
-                                <p class="text-sm text-gray-600">Fitness Manager & Specialist Coach</p>
+                        <a href="Syam.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                            <img src="Syam.jpg" alt="Syam" class="w-full h-80 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Syam</h3>
+                                <p class="text-red-600 text-sm font-medium">Fitness Manager & Specialist Coach</p>
                             </div>
                         </a>
                     </div>
 
                     <!-- Rudy -->
                     <div class="flex justify-center">
-                        <a href="Rudy.html" class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-xs overflow-hidden">
-                            <img src="Rudy.jpg" alt="Rudy" class="w-full h-72 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold mb-1">Rudy</h3>
-                                <p class="text-sm text-gray-600">Specialist Coach</p>
+                        <a href="Rudy.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                            <img src="Rudy.jpg" alt="Rudy" class="w-full h-80 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Rudy</h3>
+                                <p class="text-red-600 text-sm font-medium">Specialist Coach</p>
                             </div>
                         </a>
                     </div>
 
                     <!-- Ivan -->
                     <div class="flex justify-center">
-                        <a href="ivan.html" class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-xs overflow-hidden">
-                            <img src="Ivan.jpg" alt="Ivan" class="w-full h-72 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold mb-1">Ivan</h3>
-                                <p class="text-sm text-gray-600">Specialist Coach</p>
+                        <a href="ivan.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                            <img src="Ivan.jpg" alt="Ivan" class="w-full h-80 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Ivan</h3>
+                                <p class="text-red-600 text-sm font-medium">Specialist Coach</p>
                             </div>
                         </a>
                     </div>
@@ -100,236 +147,281 @@
             </div>
 
             <!-- Senior Coaches -->
-            <div class="text-center py-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Senior Coaches</h2>
+            <div class="text-center py-16 px-4 bg-gray-50">
+                <h2 class="text-3xl font-bold text-red-600 mb-12">Senior Coaches</h2>
                 <div class="flex justify-center">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl w-full">
-                        <a href="Kah_Wei.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl w-full">
+                        <a href="Kah_Wei.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Kah Wei.jpg" alt="Kah Wei" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Kah Wei</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Kah Wei</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="shawn.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="shawn.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Shawn.jpg" alt="Shawn" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Shawn</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Shawn</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="Li_Ting.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="Li_Ting.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Li Ting.jpg" alt="Li Ting" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Li Ting</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Li Ting</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="kheng.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="kheng.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Kheng.jpg" alt="Kheng" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Kheng</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Kheng</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="iqmal.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="iqmal.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Iqmal.jpg" alt="Iqmal" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Iqmal</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Iqmal</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="firdaus.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="firdaus.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Firdaus.jpg" alt="Firdaus" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Firdaus</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Firdaus</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="vanessa.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="vanessa.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Vanessa .jpg" alt="Vanessa" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Vanessa</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Vanessa</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="roy.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="roy.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Roy.jpg" alt="Roy" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Roy</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Roy</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
-                        <a href="bernard.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="bernard.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Bernard.jpg" alt="Bernard" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Bernard</h3><p class="text-sm text-gray-600">Senior Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Bernard</h3><p class="text-red-600 text-sm font-medium">Senior Coach</p></div>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Coaches -->
-            <div class="text-center py-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">Coaches</h2>
+            <div class="text-center py-16 px-4">
+                <h2 class="text-3xl font-bold text-red-600 mb-12">Certified Coaches</h2>
                 <div class="flex justify-center">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl w-full">
-                        <a href="nicole.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl w-full">
+                        <a href="nicole.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Nicole.jpg" alt="Nicole" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Nicole</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Nicole</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
-                        <a href="Samuel.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="Samuel.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Samuel.jpg" alt="Samuel" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Samuel</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Samuel</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
-                        <a href="brandon.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="brandon.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Bradon.jpg" alt="Brandon" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Brandon</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Brandon</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
-                        <a href="kyles.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="kyles.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Kyles.jpg" alt="Kyles" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Kyles</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Kyles</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
-                        <a href="firdanil.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="firdanil.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Firdnail.jpg" alt="Firdanil" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Firdanil</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Firdanil</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
-                        <a href="erynna.html" class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden">
+                        <a href="erynna.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                             <img src="Erynna.jpg" alt="Erynna" class="w-full h-80 object-cover">
-                            <div class="p-4 text-center"><h3 class="font-bold text-lg">Erynna</h3><p class="text-sm text-gray-600">Coach</p></div>
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Erynna</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="bg-red-600 text-white py-12 text-center">
-            <h2 class="text-3xl font-bold mb-8">Training Packages</h2>
+        <!-- Enhanced Pricing Section -->
+        <section id="pricing" class="bg-gradient-to-b from-red-700 to-red-600 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 relative pb-4 after:content-[''] after:block after:w-20 after:h-1 after:bg-white after:mx-auto after:mt-4">
+                    Training Packages
+                </h2>
 
-            <!-- Dropdown -->
-            <div class="mb-8">
-                <label for="coachType" class="block mb-2 text-lg font-semibold">Select Coach Type:</label>
-                <select id="coachType" class="text-black px-4 py-2 rounded shadow">
-                    <option value="coach">Coach</option>
-                    <option value="senior">Senior Coach</option>
-                    <option value="specialist">Specialist Coach</option>
-                </select>
-            </div>
-
-            <!-- Main Packages -->
-            <div class="flex flex-wrap justify-center gap-6 mb-12">
-                <!-- Full Throttle -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-                    <h3 class="text-xl font-bold mb-2">Full Throttle</h3>
-                    <p class="text-2xl font-bold mb-4 coach-price">$105/session</p>
-                    <p class="text-2xl font-bold mb-4 senior-price hidden">$120/session</p>
-                    <p class="text-2xl font-bold mb-4 specialist-price hidden">$135/session</p>
-                    <ul class="text-sm text-gray-800 space-y-1">
-                        <li>12-week commitment</li>
-                        <li>For serious transformation</li>
-                    </ul>
+                <div class="mb-16">
+                    <label for="coachType" class="block mb-4 text-xl font-medium">Select Coach Type:</label>
+                    <select id="coachType" class="coach-select text-white bg-red-800/30 border-2 border-white/20 rounded-xl px-6 py-3 text-lg focus:ring-2 focus:ring-white/40 focus:border-transparent appearance-none">
+                        <option value="coach">Coach</option>
+                        <option value="senior">Senior Coach</option>
+                        <option value="specialist">Specialist Coach</option>
+                    </select>
                 </div>
 
-                <!-- Accelerate -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-                    <h3 class="text-xl font-bold mb-2">Accelerate</h3>
-                    <p class="text-2xl font-bold mb-4 coach-price">$110/session</p>
-                    <p class="text-2xl font-bold mb-4 senior-price hidden">$125/session</p>
-                    <p class="text-2xl font-bold mb-4 specialist-price hidden">$140/session</p>
-                    <ul class="text-sm text-gray-800 space-y-1">
-                        <li>10 sessions package</li>
-                        <li>For steady progress</li>
-                    </ul>
+                <div class="flex flex-wrap justify-center gap-8 mb-20">
+                    <!-- Full Throttle -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">FULL THROTTLE</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$105<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$120<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$135<small class="text-lg">/session</small></p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    12-week commitment
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    Serious transformation focus
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <!-- Accelerate -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">ACCELERATE</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$110<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$125<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$140<small class="text-lg">/session</small></p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    10 sessions package
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    For steady progress
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kickstart -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                         <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">KICKSTART</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$125<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$140<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$155<small class="text-lg">/session</small></p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    3 sessions upfront
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    1-month commitment
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Kickstart -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-6 w-72">
-                    <h3 class="text-xl font-bold mb-2">Kickstart</h3>
-                    <p class="text-2xl font-bold mb-4 coach-price">$125/session</p>
-                    <p class="text-2xl font-bold mb-4 senior-price hidden">$140/session</p>
-                    <p class="text-2xl font-bold mb-4 specialist-price hidden">$155/session</p>
-                    <ul class="text-sm text-gray-800 space-y-1">
-                        <li>3 sessions upfront</li>
-                        <li>1-month commitment</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Full Throttle Breakdown -->
-            <h2 class="text-3xl font-bold mb-8">Full Throttle Package Details</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <!-- FT1 -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-4">
-                    <h3 class="text-lg font-bold">FT1</h3>
-                    <p class="text-sm">Once Every Twice a Week</p>
-                    <p class="text-xl font-bold mt-2 coach-price">$105</p>
-                    <p class="text-xl font-bold mt-2 senior-price hidden">$120</p>
-                    <p class="text-xl font-bold mt-2 specialist-price hidden">$135</p>
-                </div>
-
-                <!-- FT2 -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-4">
-                    <h3 class="text-lg font-bold">FT2</h3>
-                    <p class="text-sm">Once Every Week</p>
-                    <p class="text-xl font-bold mt-2 coach-price">$210</p>
-                    <p class="text-xl font-bold mt-2 senior-price hidden">$240</p>
-                    <p class="text-xl font-bold mt-2 specialist-price hidden">$270</p>
-                </div>
-
-                <!-- FT4 -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-4">
-                    <h3 class="text-lg font-bold">FT4</h3>
-                    <p class="text-sm">Twice Every Week</p>
-                    <p class="text-xl font-bold mt-2 coach-price">$420</p>
-                    <p class="text-xl font-bold mt-2 senior-price hidden">$480</p>
-                    <p class="text-xl font-bold mt-2 specialist-price hidden">$540</p>
-                </div>
-
-                <!-- FT6 -->
-                <div class="bg-white text-red-600 rounded-lg shadow p-4">
-                    <h3 class="text-lg font-bold">FT6</h3>
-                    <p class="text-sm">Thrice Every Week</p>
-                    <p class="text-xl font-bold mt-2 coach-price">$630</p>
-                    <p class="text-xl font-bold mt-2 senior-price hidden">$720</p>
-                    <p class="text-xl font-bold mt-2 specialist-price hidden">$810</p>
+                <!-- Full Throttle Options -->
+                <h3 class="text-3xl font-bold mb-12">Full Throttle Plans</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <!-- FT1 -->
+                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black">FT1</h4>
+                            <p class="text-sm text-white/80">Once Every Twice a Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2">
+                            <p class="coach-price">$105</p>
+                            <p class="senior-price hidden">$120</p>
+                            <p class="specialist-price hidden">$135</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Perfect for busy schedules</p>
+                        </div>
+                    </div>
+                    <!-- FT2 -->
+                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
+                         <div class="mb-4">
+                            <h4 class="text-2xl font-black">FT2</h4>
+                            <p class="text-sm text-white/80">Once Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2">
+                            <p class="coach-price">$210</p>
+                            <p class="senior-price hidden">$240</p>
+                            <p class="specialist-price hidden">$270</p>
+                        </div>
+                         <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Consistent weekly progress</p>
+                        </div>
+                    </div>
+                    <!-- FT4 -->
+                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
+                         <div class="mb-4">
+                            <h4 class="text-2xl font-black">FT4</h4>
+                            <p class="text-sm text-white/80">Twice Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2">
+                            <p class="coach-price">$420</p>
+                            <p class="senior-price hidden">$480</p>
+                            <p class="specialist-price hidden">$540</p>
+                        </div>
+                         <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Accelerated results</p>
+                        </div>
+                    </div>
+                    <!-- FT6 -->
+                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
+                         <div class="mb-4">
+                            <h4 class="text-2xl font-black">FT6</h4>
+                            <p class="text-sm text-white/80">Thrice Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2">
+                            <p class="coach-price">$630</p>
+                            <p class="senior-price hidden">$720</p>
+                            <p class="specialist-price hidden">$810</p>
+                        </div>
+                         <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Maximum intensity and support</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        document.getElementById("coachType").addEventListener("change", function () {
+        // Price Toggle Script
+        document.getElementById("coachType").addEventListener("change", function() {
             const selected = this.value;
-
-            document.querySelectorAll(".coach-price, .senior-price, .specialist-price").forEach(el => {
+            document.querySelectorAll("[class$='-price']").forEach(el => {
                 el.classList.add("hidden");
-            });
-
-            document.querySelectorAll(`.${selected}-price`).forEach(el => {
-                el.classList.remove("hidden");
+                if(el.classList.contains(`${selected}-price`)) {
+                    el.classList.remove("hidden");
+                }
             });
         });
 
-        // Set default view to coach
+        // Sidebar Toggle Script
+        const menuButton = document.getElementById('menuButton');
+        const sideNav = document.getElementById('sideNav');
+        const mainLogo = document.getElementById('mainLogo');
+
+        function toggleSidebar() {
+            sideNav.classList.toggle('translate-x-full');
+            mainLogo.classList.toggle('hidden'); // Hide/show the main logo
+        }
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!sideNav.contains(e.target) && !menuButton.contains(e.target)) {
+                if (!sideNav.classList.contains('translate-x-full')) {
+                    toggleSidebar();
+                }
+            }
+        });
+
+         // Set default view to coach on page load
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("coachType").value = "coach";
             document.querySelectorAll(".coach-price").forEach(el => el.classList.remove("hidden"));
-        });
-    </script>
-
-    <script>
-        // Get elements
-        const menuButton = document.getElementById('menuButton');
-        const sideNav = document.getElementById('sideNav');
-        const mainLogo = document.getElementById('mainLogo'); // Get the main logo element
-
-        // Function to check if the sidebar is open
-        function isSidebarOpen() {
-            return !sideNav.classList.contains('translate-x-full');
-        }
-
-        // Show sidebar function
-        function showSidebar() {
-            sideNav.classList.remove('translate-x-full');
-            mainLogo.classList.add('hidden'); // Hide the main logo
-        }
-
-        // Hide sidebar function
-        function hideSidebar() {
-            sideNav.classList.add('translate-x-full');
-            mainLogo.classList.remove('hidden'); // Show the main logo
-        }
-
-        // Toggle sidebar on hamburger button click
-        menuButton.addEventListener('click', () => {
-            if (isSidebarOpen()) {
-                hideSidebar(); // If sidebar is open, close it
-            } else {
-                showSidebar(); // If sidebar is closed, open it
-            }
-        });
-
-        // Close sidebar when clicking outside (still useful)
-        document.addEventListener('click', (event) => {
-            if (!sideNav.contains(event.target) && !menuButton.contains(event.target) && isSidebarOpen()) {
-                hideSidebar();
-            }
         });
     </script>
 </body>
