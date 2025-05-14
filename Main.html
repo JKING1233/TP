@@ -386,14 +386,14 @@
     <script>
         // Price Toggle Script
         document.getElementById("coachType").addEventListener("change", function() {
-            const selected = this.value;
-            document.querySelectorAll("[class$='-price']").forEach(el => {
-                el.classList.add("hidden");
-                if(el.classList.contains(`${selected}-price`)) {
-                    el.classList.remove("hidden");
-                }
-            });
-        });
+    const selected = this.value;
+    document.querySelectorAll("[class*='-price']").forEach(el => {
+        el.classList.add("hidden");
+        if(Array.from(el.classList).some(cls => cls === `${selected}-price`)) {
+            el.classList.remove("hidden");
+        }
+    });
+});
 
         // Sidebar Toggle Script
         const menuButton = document.getElementById('menuButton');
