@@ -382,6 +382,78 @@
             </div>
         </section>
     </main>
+<!-- Add this contact form section at the bottom of your pricing section -->
+     <div class="mt-20 max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8">
+        <h3 class="text-3xl font-bold mb-8">Get Started Today</h3>
+        <form id="membershipForm" class="space-y-6 text-left">
+            <div>
+                <label for="memberId" class="block text-lg font-medium mb-2">Member ID Number</label>
+                <input type="text" id="memberId" name="memberId" required 
+                       class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-Black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white/40"
+                       placeholder="Enter your member ID">
+            </div>
+            
+            <div>
+                <label for="fullName" class="block text-lg font-medium mb-2">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required 
+                       class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-Black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white/40"
+                       placeholder="Your full name">
+            </div>
+            
+            <div>
+                <label for="email" class="block text-lg font-medium mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-Black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white/40"
+                       placeholder="example@email.com">
+            </div>
+            
+            <div>
+                <label for="phone" class="block text-lg font-medium mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" 
+                       class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-Black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white/40"
+                       placeholder="+65 1234 5678">
+            </div>
+            
+            <div>
+                <label for="trainer" class="block text-lg font-medium mb-2">Select Your Preferred Trainer</label>
+                <select id="trainer" name="trainer" 
+                        class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-Black appearance-none focus:outline-none focus:ring-2 focus:ring-white/40">
+                    <option value="" class="text-gray-400">-- No preference --</option>
+                    <optgroup label="Specialist Coaches" class="text-Black">
+                        <option value="syam">Syam</option>
+                        <option value="rudy">Rudy</option>
+                        <option value="ivan">Ivan</option>
+                    </optgroup>
+                    <optgroup label="Senior Coaches" class="text-Black">
+                        <option value="kah_wei">Kah Wei</option>
+                        <option value="shawn">Shawn</option>
+                        <option value="li_ting">Li Ting</option>
+                        <option value="kheng">Kheng</option>
+                        <option value="iqmal">Iqmal</option>
+                        <option value="firdaus">Firdaus</option>
+                        <option value="vanessa">Vanessa</option>
+                        <option value="roy">Roy</option>
+                        <option value="bernard">Bernard</option>
+                    </optgroup>
+                    <optgroup label="Coaches" class="text-Black">
+                        <option value="nicole">Nicole</option>
+                        <option value="samuel">Samuel</option>
+                        <option value="brandon">Brandon</option>
+                        <option value="kyles">Kyles</option>
+                        <option value="firdanil">Firdanil</option>
+                        <option value="erynna">Erynna</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-white text-red-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 text-lg">
+                Submit Request
+            </button>
+        </form>
+    </div>
+</div>
+</section>
 
     <script>
         // Price Toggle Script
@@ -423,6 +495,29 @@
             document.getElementById("coachType").value = "coach";
             document.querySelectorAll(".coach-price").forEach(el => el.classList.remove("hidden"));
         });
-    </script>
+    document.getElementById('membershipForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const formData = {
+        memberId: document.getElementById('memberId').value,
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        trainer: document.getElementById('trainer').value,
+        package: document.getElementById('package').value,
+        message: document.getElementById('message').value
+    };
+    
+    // Here you would typically send the data to your server
+    console.log('Form submitted:', formData);
+    
+    // Show success message
+    alert('Thank you for your submission! Our team will contact you shortly to complete your membership process.');
+    
+    // Reset form
+    this.reset();
+});
+</script>
 </body>
 </html>
