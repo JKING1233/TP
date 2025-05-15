@@ -150,7 +150,34 @@
       color: #fff;
     }
     /* --- END OF CSS CHANGES FOR TOGGLING AND ALWAYS VISIBLE SECTIONS --- */
+    .member-id-section {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #b8001a;
+      border-radius: 8px;
+    }
 
+    .member-id-section input {
+      padding: 8px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .member-id-section button {
+      padding: 8px 12px;
+      background-color: #fff;
+      color: #d0001f;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #qr-code {
+      margin-top: 10px;
+    }
 
     /* --- START OF CSS CHANGE FOR BACK LINK STYLING --- */
     .back-link { /* CSS for the Back to Home link, styled as a button */
@@ -243,9 +270,14 @@
       <!-- Contact Info -->
       <div class="contact-info">
         <h3>Contact Information</h3>
-        <p><strong>Email:</strong> <a href="mailto:Kah.Wei@virginactive.com.sg" style="color: #fff;">Kah.Wei@virginactive.com.sg</a></p>
+        <!-- Member ID + QR Code -->
+        <div class="member-id-section">
+          <label for="memberId">Enter Your Member ID:</label><br>
+          <input type="text" id="memberId" placeholder="e.g. 123456789"/><br>
+          <button onclick="generateQRCode()">Generate QR Code</button>
+          <div id="qr-code"></div>
+        </div>
       </div>
-
       <!-- Back link -->
       <a class="back-link" href="Main.html">← Back to Home</a>
     </div>
@@ -260,6 +292,8 @@
   </section>
 
   <!-- JavaScript for toggling skills / certifications -->
+   <!-- QR Code Library -->
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <script>
     const skills = [
       "Strength and conditioning",
@@ -271,7 +305,7 @@
       "ACE certified pt"
     ];
 
-    function showSkills() {
+        function showSkills() {
       document.getElementById("toggle-title").textContent = "Skills";
       document.getElementById("toggle-content").innerHTML = skills.map(item => `<li>${item}</li>`).join('');
     }
@@ -280,7 +314,29 @@
       document.getElementById("toggle-title").textContent = "Certifications";
       document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
     }
+
+    function generateQRCode() {
+      const memberId = document.getElementById("memberId").value || "___________";
+      const email = "Kah.Wei@virginactive.com.sg";
+      const subject = "Training Inquiry";
+      const body = `Hello Kah Wei,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in your training services.`;
+
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      document.getElementById("qr-code").innerHTML = "";
+      new QRCode(document.getElementById("qr-code"), {
+        text: mailtoLink,
+        width: 150,
+        height: 150,
+        colorDark: "#ffffff",
+        colorLight: "#d0001f",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    window.onload = function() {
+      showSkills();
+    };
   </script>
 </body>
 </html>
-
