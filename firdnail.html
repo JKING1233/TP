@@ -266,6 +266,13 @@
       <div class="contact-info">
         <h3>Contact Information</h3>
         <p><strong>Email:</strong> <a href="mailto:Firdanil.Ihsan@virginactive.com.sg" style="color: #fff;">Firdanil.Ihsan@virginactive.com.sg</a></p>
+        <!-- Member ID + QR Code -->
+        <div class="member-id-section">
+          <label for="memberId">Enter Your Member ID:</label><br>
+          <input type="text" id="memberId" placeholder="e.g. 123456789"/><br>
+          <button onclick="generateQRCode()">Generate QR Code</button>
+          <div id="qr-code"></div>
+        </div>
       </div>
 
       <a class="back-link" href="Main.html">← Back to Home</a>
@@ -301,9 +308,9 @@
 
     function generateQRCode() {
       const memberId = document.getElementById("memberId").value || "___________";
-      const email = "samuel.lim@virginactive.com.sg";
+      const email = "Firdanil.Ihsan@virginactive.com.sg";
       const subject = "Training Inquiry";
-      const body = `Hello Samuel,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in your training services.`;
+      const body = `Hello Firdanil,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in your training services.`;
 
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
