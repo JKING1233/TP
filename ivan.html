@@ -317,25 +317,45 @@
       document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
     }
 
-    function generateQRCode() {
-      const memberId = document.getElementById("memberId").value || "___________";
-      const email = "Ivan.Davy@virginactive.com.sg";
-      const subject = "Training Inquiry";
-      const body = `Hello Ivan,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0A%0D%0A[Automated message]%0D%0AQuestions:%0D%0A%0D%0A1. Permission to contact through WhatsApp? (Yes/No): ________%0D%0A%0D%0A2. What are your current fitness goals?%0D%0A________________________________________________%0D%0A________________________________________________%0D%0A%0D%0A3. Preferred availability? (Date & Timing)%0D%0A________________________________________________%0D%0A________________________________________________%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+function generateQRCode() {
+  const memberId = document.getElementById("memberId").value || "___________";
+  const email = "Ivan.Davy@virginactive.com.sg";
+  const subject = "Training Inquiry";
+  
+  // Using explicit line breaks and proper encoding
+  const body = [
+    "Hello Ivan,",
+    "",
+    "My Member ID is: " + memberId,
+    "",
+    "Questions:",
+    "",
+    "1. Permission to contact through WhatsApp? (Yes/No): ________",
+    "",
+    "2. What are your current fitness goals?",
+    "",
+    "",
+    "3. Preferred availability? (Date & Timing)",
+    "",
+    "",
+    "I am interested in more about personal training and would like to have a wellness consultation."
+  ].join("%0D%0A"); // Using %0D%0A for reliable line breaks
 
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-      document.getElementById("qr-code").innerHTML = "";
-      new QRCode(document.getElementById("qr-code"), {
-        text: mailtoLink,
-        width: 150,
-        height: 150,
-        colorDark: "#ffffff",
-        colorLight: "#d0001f",
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    }
+  // Clear previous QR code if any
+  document.getElementById("qr-code").innerHTML = "";
+  
+  // Generate new QR code
+  new QRCode(document.getElementById("qr-code"), {
+    text: mailtoLink,
+    width: 150,
+    height: 150,
+    colorDark: "#ffffff",
+    colorLight: "#d0001f",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+}
 
     window.onload = function() {
       showSkills();
