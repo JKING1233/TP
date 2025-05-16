@@ -324,21 +324,24 @@
       const memberId = document.getElementById("memberId").value || "___________";
       const email = "Rudy.Rahman@virginactive.com.sg";
       const subject = "Training Inquiry";
-      const body = `Hello Ruddy,
+      const body = "Hello Rudy,",
+    "",
+    "My Member ID is: " + memberId,
+    "",
+    "Questions:",
+    "",
+    "1. Permission to contact through WhatsApp? (Yes/No): ________",
+    "",
+    "2. What are your current fitness goals?",
+    "",
+    "",
+    "3. Preferred availability? (Date & Timing)",
+    "",
+    "",
+    "I am interested in more about personal training and would like to have a wellness consultation."
+  ].join("%0D%0A"); // Using %0D%0A for reliable line breaks
 
-      My Member ID is: ${memberId}
-
-
-Questions:
-
-1. Permission to contact through WhatsApp? (Yes/No): ________
-
-2. What are your current fitness goals? (Please type your response here)
-
-3. Preferred availability (Please type your specify date and time)
-
-
-      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
       document.getElementById("qr-code").innerHTML = "";
       new QRCode(document.getElementById("qr-code"), {
