@@ -319,22 +319,7 @@
       const memberId = document.getElementById("memberId").value || "___________";
       const email = "Kah.Wei@virginactive.com.sg";
       const subject = "Training Inquiry";
-      const body ="Hello Kah Wei,",
-    "",
-    "My Member ID is: " + memberId,
-    "",
-    "Questions:",
-    "",
-    "1. Permission to contact through WhatsApp? (Yes/No): ________",
-    "",
-    "2. What are your current fitness goals?",
-    "",
-    "",
-    "3. Preferred availability? (Date & Timing)",
-    "",
-    "",
-    "I am interested in more about personal training and would like to have a wellness consultation."
-  ].join("%0D%0A"); // Using %0D%0A for reliable line breaks
+       const body = `Hello Kah Wei,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
       
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
