@@ -12,21 +12,21 @@
       color: #fff;
     }
 
-    .profile-card {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: #d0001f;
-      display: flex;
-      flex-wrap: wrap;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-    }
+     .profile-image {
+    flex: 1 1 300px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-    .profile-image {
-      flex: 1 1 300px;
-      min-width: 300px;
-    }
+  .profile-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
 
     .profile-image img {
       width: 100%;
