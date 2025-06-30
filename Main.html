@@ -30,8 +30,25 @@
             transform: translateY(-5px);
             transition: transform 0.3s ease;
         }
+        .package-detail {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
         .package-detail:hover {
-            background: rgba(255, 255, 255, 0.95);
+            background: white !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .package-detail:hover h4,
+        .package-detail:hover .text-white {
+            color: #ef4444 !important;
+        }
+        .package-detail:hover .text-white\/80 {
+            color: #6b7280 !important;
+        }
+        .package-detail:hover .border-white\/20 {
+            border-color: #e5e7eb !important;
         }
         .coach-select {
             background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23ffffff' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/12px 12px;
@@ -45,7 +62,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         .trainer-card img {
-    object-position: center center;
+            object-position: center center;
         }
     </style>
 </head>
@@ -228,9 +245,9 @@
                         <div class="mb-6">
                             <h3 class="text-2xl font-black mb-4">FULL THROTTLE</h3>
                             <div class="space-y-2">
-                                <p class="text-3xl font-bold coach-price">$105<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold senior-price hidden">$120<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold specialist-price hidden">$135<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold coach-price">$112<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$127<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$142<small class="text-lg">/session</small></p>
                             </div>
                         </div>
                         <div class="border-t border-white/20 pt-6">
@@ -252,9 +269,9 @@
                         <div class="mb-6">
                             <h3 class="text-2xl font-black mb-4">ACCELERATE</h3>
                             <div class="space-y-2">
-                                <p class="text-3xl font-bold coach-price">$110<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold senior-price hidden">$125<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold specialist-price hidden">$140<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold coach-price">$117.50<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$132.50<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$147.50<small class="text-lg">/session</small></p>
                             </div>
                         </div>
                         <div class="border-t border-white/20 pt-6">
@@ -276,9 +293,9 @@
                          <div class="mb-6">
                             <h3 class="text-2xl font-black mb-4">KICKSTART</h3>
                             <div class="space-y-2">
-                                <p class="text-3xl font-bold coach-price">$125<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold senior-price hidden">$140<small class="text-lg">/session</small></p>
-                                <p class="text-3xl font-bold specialist-price hidden">$155<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold coach-price">$133.33<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$148.33<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$163.33<small class="text-lg">/session</small></p>
                             </div>
                         </div>
                         <div class="border-t border-white/20 pt-6">
@@ -300,62 +317,62 @@
                 <h3 class="text-3xl font-bold mb-12">Full Throttle Plans</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                     <!-- FT1 -->
-                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
+                    <div class="package-detail rounded-xl p-6">
                         <div class="mb-4">
-                            <h4 class="text-2xl font-black">FT1</h4>
+                            <h4 class="text-2xl font-black text-white">FT1</h4>
                             <p class="text-sm text-white/80">Once Every Twice a Week</p>
                         </div>
-                        <div class="text-3xl font-bold space-y-2">
-                            <p class="coach-price">$105</p>
-                            <p class="senior-price hidden">$120</p>
-                            <p class="specialist-price hidden">$135</p>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$112<small class="text-lg">/session</small></p>
+                            <p class="senior-price hidden">$127<small class="text-lg">/session</small></p>
+                            <p class="specialist-price hidden">$142<small class="text-lg">/session</small></p>
                         </div>
                         <div class="mt-4 pt-4 border-t border-white/20">
                             <p class="text-sm text-white/80">Perfect for busy schedules</p>
                         </div>
                     </div>
                     <!-- FT2 -->
-                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
-                         <div class="mb-4">
-                            <h4 class="text-2xl font-black">FT2</h4>
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT2</h4>
                             <p class="text-sm text-white/80">Once Every Week</p>
                         </div>
-                        <div class="text-3xl font-bold space-y-2">
-                            <p class="coach-price">$210</p>
-                            <p class="senior-price hidden">$240</p>
-                            <p class="specialist-price hidden">$270</p>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$224<small class="text-lg">/session</small></p>
+                            <p class="senior-price hidden">$254<small class="text-lg">/session</small></p>
+                            <p class="specialist-price hidden">$284<small class="text-lg">/session</small></p>
                         </div>
-                         <div class="mt-4 pt-4 border-t border-white/20">
+                        <div class="mt-4 pt-4 border-t border-white/20">
                             <p class="text-sm text-white/80">Consistent weekly progress</p>
                         </div>
                     </div>
                     <!-- FT4 -->
-                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
-                         <div class="mb-4">
-                            <h4 class="text-2xl font-black">FT4</h4>
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT4</h4>
                             <p class="text-sm text-white/80">Twice Every Week</p>
                         </div>
-                        <div class="text-3xl font-bold space-y-2">
-                            <p class="coach-price">$420</p>
-                            <p class="senior-price hidden">$480</p>
-                            <p class="specialist-price hidden">$540</p>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$448<small class="text-lg">/session</small></p>
+                            <p class="senior-price hidden">$508<small class="text-lg">/session</small></p>
+                            <p class="specialist-price hidden">$568<small class="text-lg">/session</small></p>
                         </div>
-                         <div class="mt-4 pt-4 border-t border-white/20">
+                        <div class="mt-4 pt-4 border-t border-white/20">
                             <p class="text-sm text-white/80">Accelerated results</p>
                         </div>
                     </div>
                     <!-- FT6 -->
-                    <div class="package-detail bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:shadow-xl">
-                         <div class="mb-4">
-                            <h4 class="text-2xl font-black">FT6</h4>
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT6</h4>
                             <p class="text-sm text-white/80">Thrice Every Week</p>
                         </div>
-                        <div class="text-3xl font-bold space-y-2">
-                            <p class="coach-price">$630</p>
-                            <p class="senior-price hidden">$720</p>
-                            <p class="specialist-price hidden">$810</p>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$672<small class="text-lg">/session</small></p>
+                            <p class="senior-price hidden">$762<small class="text-lg">/session</small></p>
+                            <p class="specialist-price hidden">$852<small class="text-lg">/session</small></p>
                         </div>
-                         <div class="mt-4 pt-4 border-t border-white/20">
+                        <div class="mt-4 pt-4 border-t border-white/20">
                             <p class="text-sm text-white/80">Maximum intensity and support</p>
                         </div>
                     </div>
