@@ -298,7 +298,7 @@
 
     <!-- QR Code Library -->
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <!-- JavaScript for toggling skills / certifications -->
+    <!-- JavaScript for toggling skills / certifications -->
   <script>
     const skills = [
       "Weight Loss",
@@ -321,33 +321,32 @@
       document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
     }
 
-function generateQRCode() {
-  const memberId = document.getElementById("memberId").value || "___________";
-  const email = "Ivan.Davy@virginactive.com.sg";
-  const subject = "Training Inquiry";
-  
-  // Using explicit line breaks and proper encoding
-   const body = `Hello Samuel,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+    function generateQRCode() {
+      const memberId = document.getElementById("memberId").value || "___________";
+      const email = "Ivan.Davy@virginactive.com.sg";
+      const subject = "Training Inquiry";
+      
+      // Using explicit line breaks and proper encoding
+      const body = `Hello Samuel,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
 
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-  // Clear previous QR code
-  const qrContainer = document.getElementById("qr-code");
-  qrContainer.innerHTML = "";
-  
-  // Generate new QR code with error correction
-  new QRCode(qrContainer, {
-    text: mailtoLink,
-    width: 250,  // Increased size for better scanning
-    height: 250,
-    colorDark: "#000000",  // Higher contrast
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H  // Highest error correction
-  }
+      // Clear previous QR code
+      const qrContainer = document.getElementById("qr-code");
+      qrContainer.innerHTML = "";
+      
+      // Generate new QR code with error correction
+      new QRCode(qrContainer, {
+        text: mailtoLink,
+        width: 250,  // Increased size for better scanning
+        height: 250,
+        colorDark: "#000000",  // Higher contrast
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H  // Highest error correction
+      });
+    }
 
     window.onload = function() {
       showSkills();
     };
   </script>
-</body>
-</html>
