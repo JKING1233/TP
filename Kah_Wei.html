@@ -234,17 +234,21 @@
 
     .carousel-slide.active {
       display: block;
+      animation: fadeIn 0.5s ease;
     }
 
-.carousel-image {
-  max-width: 100%;
-  height: 500px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 3px solid #d0001f;
-  background-color: #000; /* optional: to fill empty space */
-}
+    @keyframes fadeIn {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
 
+    .carousel-image {
+      max-width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #d0001f;
+    }
 
     .carousel-controls {
       display: flex;
@@ -420,8 +424,10 @@
 
     // Carousel Functionality
     let currentSlideIndex = 0;
+    let slideInterval;
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
+    const rotationSpeed = 3000; // 3 seconds between slides
 
     function showSlide(index) {
       slides.forEach(slide => slide.classList.remove('active'));
@@ -442,19 +448,33 @@
       }
       
       showSlide(newIndex);
+      resetInterval(); // Reset the auto-rotation timer when manually navigating
     }
 
     function goToSlide(index) {
       showSlide(index);
+      resetInterval(); // Reset the auto-rotation timer when clicking dots
     }
 
-    // Auto-rotate slides (optional)
-    // setInterval(() => moveSlide(1), 3000);
+    function startAutoRotation() {
+      slideInterval = setInterval(() => moveSlide(1), rotationSpeed);
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      startAutoRotation();
+    }
+
+    // Pause auto-rotation when hovering over carousel
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', startAutoRotation);
 
     // Initialize on load
     window.onload = function() {
       showSkills();
       showSlide(0);
+      startAutoRotation(); // Start auto-rotation when page loads
     };
   </script>
 </body>
